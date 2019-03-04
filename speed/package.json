@@ -8,7 +8,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --port 4219",
+    "start": "ng serve -o --port 4220",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -40,7 +40,7 @@
     "@angular-devkit/build-angular": "^0.12.3",
     "@angular-devkit/schematics": "^7.3.1",
     "@angular/cli": "~7.2.3",
-    "@angular/compiler-cli": "^7.2.5",
+    "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "~7.2.2",
     "@ngrx/schematics": "^7.2.0",
     "@types/jasmine": "~2.8.8",

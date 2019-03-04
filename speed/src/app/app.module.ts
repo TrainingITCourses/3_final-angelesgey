@@ -29,6 +29,8 @@ import { StatusEffects } from './reducers/status/status.effects';
 import { MissionEffects } from './reducers/mission/mission.effects';
 import { AgencyEffects } from './reducers/agency/agency.effects';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { AgencyEffects } from './reducers/agency/agency.effects';
     MatToolbarModule,
     MatSelectModule,
     MatCardModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([LaunchEffects, StatusEffects, MissionEffects, AgencyEffects])
