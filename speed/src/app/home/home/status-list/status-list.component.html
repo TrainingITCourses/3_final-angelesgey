@@ -1,5 +1,5 @@
 <mat-list *ngIf="!loading; else showloading">
-  <a mat-list-item *ngFor="let status of statuses" >
+  <a mat-list-item *ngFor="let status of statuses" [routerLink]="['launch', status.id]">
     <mat-icon matListIcon>input</mat-icon>
     <h3 matLine>
       {{ status.name }}

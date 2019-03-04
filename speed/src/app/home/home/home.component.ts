@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     // se subscribe a los cambios en las listas
-    this.observeLaunchesLists();
+    this.observeLaunchStatusesLists();
     // se cargan los filtros de busqueda
     this.loading = true;
     this.loadData();       
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(new LoadStatuses());
   }
 
-  private observeLaunchesLists() {
+  private observeLaunchStatusesLists() {
     this.store.select('status').subscribe(statusState => {
       this.launchStatus = statusState.statuses;
       this.loading = statusState.loading;
