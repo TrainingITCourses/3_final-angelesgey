@@ -7,8 +7,8 @@ const routes: Routes = [
     loadChildren:'./home/home.module#HomeModule'
   },
   {
-    path: 'launch/:status',
-    loadChildren:'./launch/launch.module#LaunchModule'
+    path: 'launches/:status',
+    loadChildren:'./launches/launches.module#LaunchesModule'
   }
 ];
 

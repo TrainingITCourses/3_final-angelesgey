@@ -6,11 +6,11 @@ import { LoadLaunches } from 'src/app/reducers/launch/launch.actions';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-launch',
-  templateUrl: './launch.component.html',
-  styleUrls: ['./launch.component.css']
+  selector: 'app-launches',
+  templateUrl: './launches.component.html',
+  styleUrls: ['./launches.component.css']
 })
-export class LaunchComponent implements OnInit {
+export class LaunchesComponent implements OnInit {
 
   public launches: Launch[];
   public loading: Boolean;
