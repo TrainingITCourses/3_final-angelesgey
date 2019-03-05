@@ -10,6 +10,7 @@ export class LaunchesListComponent implements OnInit {
 
   @Input() public launches:  [];
   @Input() public status:  String;
+  @Input() public relativePath:  String;
 
   constructor() { }
 

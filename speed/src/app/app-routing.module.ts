@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'launches/:status',
     loadChildren:'./launches/launches.module#LaunchesModule'
+  },
+  {
+    path: 'launch/:id',
+    loadChildren:'./launch/launch.module#LaunchModule'
   }
 ];
 
