@@ -2,18 +2,19 @@
   <mat-card-header>
     <mat-card-title>{{ getCount() }} launches for the status {{ status }}:</mat-card-title>
   </mat-card-header>
-<mat-card-content>
-<mat-list>
-  <a mat-list-item *ngFor="let launch of launches" [routerLink]="[relativePath, launch.id]">
-    <mat-icon matListIcon>launch</mat-icon>
-    <h3 matLine>
-      {{ launch.name }}
-    </h3>
-    <div matLine>        
-      <i> At {{ launch.location.name }} On {{ launch.net }}</i>
-    </div>
-    <mat-divider></mat-divider>
-  </a>
-</mat-list>
-</mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-list>
+      <a mat-list-item *ngFor="let launch of launches" [routerLink]="[relativePath, launch.id]">
+        <mat-icon matListIcon>launch</mat-icon>
+        <h3 matLine>
+          {{ launch.name }}
+        </h3>
+        <div matLine>        
+          <i> At {{ launch.location.name }} On {{ launch.net }}</i>
+        </div>
+        <mat-divider></mat-divider>
+      </a>
+    </mat-list>
+  </mat-card-content>
 </mat-card>

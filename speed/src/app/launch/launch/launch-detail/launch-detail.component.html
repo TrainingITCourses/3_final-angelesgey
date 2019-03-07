@@ -1,23 +1,25 @@
-<mat-card *ngIf="launch!=null">
+<mat-card class="launch-card" *ngIf="launch!=null">
   <mat-card-header>
     <mat-icon mat-card-avatar>launch</mat-icon>
+    <!--
     <mat-card-title>
       <h1 class="mat-h1">
         {{ launch.name }}
       </h1>
-    </mat-card-title>
+    </mat-card-title>-->
     <mat-card-subtitle>
       <h3 class="mat-h3">
         At {{ launch.location.name }} On {{ launch.net }}.
       </h3>
     </mat-card-subtitle>
+   
   </mat-card-header>
-  <mat-card-content>
-    <section *ngIf="launch.missions && launch.missions[0]">
+  <mat-card-content>      
+    <section *ngIf="launch.missions && launch.missions[0]" class="launch-card-section">
       {{ launch.missions[0].description }}
     </section>
     <mat-divider></mat-divider>
-    <img mat-card-image
+    <img mat-card-image 
          [src]="launch.rocket.imageURL"
          alt="Photo of {{ launch.rocket.name }}">
 

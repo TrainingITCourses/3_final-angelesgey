@@ -21,12 +21,14 @@ import { LaunchEffects } from '../reducers/launch/launch.effects';
 import { StatusEffects } from '../reducers/status/status.effects';
 import { MissionEffects } from '../reducers/mission/mission.effects';
 import { AgencyEffects } from '../reducers/agency/agency.effects';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [HomeComponent, StatusListComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    SharedModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,

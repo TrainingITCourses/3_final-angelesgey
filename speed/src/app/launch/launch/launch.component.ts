@@ -15,6 +15,7 @@ export class LaunchComponent implements OnInit {
   public launch: Launch;
   public loading: Boolean;
   public launchSelected: String;
+  public pageTitle: String;
 
   constructor(private activatedRoute: ActivatedRoute, private store: Store<State>) { }
 
@@ -36,6 +37,7 @@ export class LaunchComponent implements OnInit {
       this.launch = launchesState.launches.filter(
         launch => launch.id.toString() === this.launchSelected
       )[0];
+      this.pageTitle = (this.launch != undefined ? this.launch.name : "");
       this.loading = launchesState.loading;
     });
   }
