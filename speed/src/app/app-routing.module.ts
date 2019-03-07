@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'launch/:id',
     loadChildren:'./launch/launch.module#LaunchModule'
+  },
+  {
+    path: 'search',
+    loadChildren:'./search/search.module#SearchModule'
   }
 ];
 

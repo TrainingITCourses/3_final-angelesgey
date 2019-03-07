@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Launch } from '../store/models/launch';
-import { Agency } from '../store/models/agency';
-import { Mission } from '../store/models/mission';
-import { Status } from '../store/models/status';
+import { Launch } from '../../store/models/launch';
+import { Agency } from '../../store/models/agency';
+import { Mission } from '../../store/models/mission';
+import { Status } from '../../store/models/status';
 import { Store } from '@ngrx/store';
-import { State } from '../reducers';
-import { LoadLaunches } from '../reducers/launch/launch.actions';
-import { LoadMissions } from '../reducers/mission/mission.actions';
-import { LoadAgencies } from '../reducers/agency/agency.actions';
-import { LoadStatuses } from '../reducers/status/status.actions';
+import { State } from '../../reducers';
+import { LoadLaunches } from '../../reducers/launch/launch.actions';
+import { LoadMissions } from '../../reducers/mission/mission.actions';
+import { LoadAgencies } from '../../reducers/agency/agency.actions';
+import { LoadStatuses } from '../../reducers/status/status.actions';
 
 @Component({
   selector: 'app-search',

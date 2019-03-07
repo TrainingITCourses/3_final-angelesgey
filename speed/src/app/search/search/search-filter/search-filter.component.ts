@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
-import { Status } from '../store/models/status';
-import { Agency } from '../store/models/agency';
-import { Mission } from '../store/models/mission';
+import { Status } from '../../../store/models/status';
+import { Agency } from '../../../store/models/agency';
+import { Mission } from '../../../store/models/mission';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

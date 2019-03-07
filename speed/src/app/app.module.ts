@@ -1,24 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { SearchResultComponent } from './search-result/search-result.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchFilterComponent } from './search-filter/search-filter.component';
 
-import {
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatProgressSpinnerModule,
-  MatSidenavModule,
-  MatToolbarModule,
-  MatSelectModule,
-  MatCardModule
-} from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -30,29 +16,19 @@ import { MissionEffects } from './reducers/mission/mission.effects';
 import { AgencyEffects } from './reducers/agency/agency.effects';
 
 import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchComponent,
-    SearchResultComponent,
-    SearchFilterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatSelectModule,
-    MatCardModule,
     HttpClientModule,
+    MatToolbarModule,    
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([LaunchEffects, StatusEffects, MissionEffects, AgencyEffects])
