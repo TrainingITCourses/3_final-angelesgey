@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { StatusListComponent } from './home/status-list/status-list.component';
 
 import {
-  MatButtonModule,
   MatIconModule,
   MatListModule,
   MatProgressSpinnerModule
@@ -19,8 +18,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,
-    MatButtonModule,
+    SharedModule,    
     MatIconModule,
     MatListModule,
     HttpClientModule,

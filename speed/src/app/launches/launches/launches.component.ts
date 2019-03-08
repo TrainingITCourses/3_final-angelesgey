@@ -5,6 +5,7 @@ import { State } from '../../reducers';
 import { LoadLaunches } from 'src/app/reducers/launch/launch.actions';
 import { ActivatedRoute } from '@angular/router';
 import { LoadStatuses } from 'src/app/reducers/status/status.actions';
+import { SORT_DESC } from './launches-list/launches-list.component';
 
 @Component({
   selector: 'app-launches',
@@ -38,24 +39,32 @@ export class LaunchesComponent implements OnInit {
   private observeLaunchesLists() {
     this.store.select('launch').subscribe(launchesState => {
       this.statusSelected = this.activatedRoute.snapshot.params['status'];
-      this.launches = launchesState.launches.filter(
-        launch => launch.status.toString() === this.statusSelected
-      );
+      this.launches = launchesState.launches
+        .filter(launch => launch.status.toString() === this.statusSelected)
+        .sort((a, b) => (a.isostart < b.isostart ? 1 : -1));
       this.loading = launchesState.loading;
     });
 
     this.store.select('status').subscribe(statusState => {
       this.statusSelected = this.activatedRoute.snapshot.params['status'];
-      console.log("statusSelected: " + this.statusSelected);
-      console.log("statusState.statuses: " + statusState.statuses);
+      console.log("status this.statusSelected " + this.statusSelected);   
      const statusSel = statusState.statuses.filter(
         status =>          
           status.id.toString() === this.statusSelected
       );
-      console.log("statusSel: " + statusSel);
       this.statusName = (statusSel.length > 0) ? statusSel[0].name : "";
-      this.pageTitle = "Status: " + this.statusName;      
+      this.pageTitle = "Status: " + this.statusName;        
     });
+
+
+  }
+
+  onSort = (p) => {
+    console.log("Sort " + p);    
+
+    this.launches = this.launches.sort((a, b) => 
+      (a.isostart < b.isostart ? ((p === SORT_DESC) ? 1 : -1) : ((p === SORT_DESC) ? -1 : 1)));
+
   }
 
 }

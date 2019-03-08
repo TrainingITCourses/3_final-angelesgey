@@ -1,9 +1,22 @@
+<mat-toolbar *ngIf="launches">
+    <mat-toolbar-row>
+      <span>{{ getCount() }} launches for the status {{ status }}</span>
+      <span class="spacer"></span>
+      <div *ngIf="getCount() > 0">
+        <button mat-stroked-button *ngIf="!isAscendent" color="accent" class="margin-right" (click)="sortAsc()">
+            <mat-icon aria-label="Sort by date ascendent" class="margin-right ascendent">sort</mat-icon>
+            <span>Sort ASC</span>
+        </button>
+        <button mat-stroked-button *ngIf="isAscendent"color="accent" class="margin-right" (click)="sortDesc()">
+            <mat-icon aria-label="Sort by date descendent" class="margin-right">sort</mat-icon>
+            <span>Sort DESC</span>
+        </button>
+      </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>{{ getCount() }} launches for the status {{ status }}:</mat-card-title>
-  </mat-card-header>
-  <mat-divider></mat-divider>
-  <mat-card-content>
+  <mat-card-content class="content">
     <mat-list>
       <a mat-list-item *ngFor="let launch of launches" [routerLink]="[relativePath, launch.id]">
         <mat-icon matListIcon>launch</mat-icon>
