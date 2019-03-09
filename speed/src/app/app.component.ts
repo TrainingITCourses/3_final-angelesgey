@@ -24,7 +24,7 @@ export class AppComponent {
         let dialogRef = this.dialog.open(ConfirmDialogComponent, {
           width: '250px',
           data: {
-            message: 'There is a new version, Click ok to install', 
+            message: 'There is a new version, click ok to install', 
             title: 'New version available'
           }
         });
