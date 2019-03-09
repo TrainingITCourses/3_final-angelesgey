@@ -1,15 +1,18 @@
 <mat-toolbar *ngIf="launches">
     <mat-toolbar-row>
-      <span>{{ getCount() }} launches for the status {{ status }}</span>
+      <span>{{ getCount() }} launches for the status {{ status }}
+      <span *ngIf="!isAscendent"> (latest first)</span>
+      <span *ngIf="isAscendent"> (oldest first)</span>
+    </span>
       <span class="spacer"></span>
       <div *ngIf="getCount() > 0">
         <button mat-stroked-button *ngIf="!isAscendent" color="accent" class="margin-right" (click)="sortAsc()">
             <mat-icon aria-label="Sort by date ascendent" class="margin-right ascendent">sort</mat-icon>
-            <span>Sort ASC</span>
+            <span>Show oldest first</span>
         </button>
         <button mat-stroked-button *ngIf="isAscendent"color="accent" class="margin-right" (click)="sortDesc()">
             <mat-icon aria-label="Sort by date descendent" class="margin-right">sort</mat-icon>
-            <span>Sort DESC</span>
+            <span>Show latest first</span>
         </button>
       </div>
     </mat-toolbar-row>
