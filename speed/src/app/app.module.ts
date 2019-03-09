@@ -17,6 +17,9 @@ import { AgencyEffects } from './reducers/agency/agency.effects';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { DialogsModule } from './dialogs/dialogs.module';
+import { ConfirmDialogComponent } from './dialogs/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -28,11 +31,14 @@ import { MatToolbarModule } from '@angular/material';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatToolbarModule,    
+    MatToolbarModule,
+    DialogsModule,    
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([LaunchEffects, StatusEffects, MissionEffects, AgencyEffects])
+    EffectsModule.forRoot([LaunchEffects, StatusEffects, MissionEffects, AgencyEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
+  entryComponents: [ConfirmDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

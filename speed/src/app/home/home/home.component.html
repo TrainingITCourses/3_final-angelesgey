@@ -1,2 +1,9 @@
 <app-statusbar [pageTitle]="pageTitle"></app-statusbar>
-<app-status-list [statuses]="launchStatus"></app-status-list>
+<app-status-list 
+    [statuses]="launchStatus" 
+    *ngIf="!loading; else showloading">
+</app-status-list>
+
+<ng-template #showloading>
+    <div class="loader"><mat-spinner mode="indeterminate"></mat-spinner></div>
+</ng-template>

@@ -3,4 +3,9 @@
     [launches]="launches" 
     [status]="statusName"
     relativePath="../../launch"
-    (sort) = "onSort($event)"></app-launches-list>
+    (sort) = "onSort($event)"
+    *ngIf="!loading; else showloading"></app-launches-list>
+
+    <ng-template #showloading>
+        <div class="loader"><mat-spinner mode="indeterminate"></mat-spinner></div>
+    </ng-template>

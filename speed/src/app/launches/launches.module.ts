@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LaunchesRoutingModule } from './launches-routing.module';
 import { LaunchesComponent } from './launches/launches.component';
 import { LaunchesListComponent } from './launches/launches-list/launches-list.component';
-import { MatCardModule, MatIconModule, MatListModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatListModule, MatButtonModule, MatToolbarModule, MatProgressSpinnerModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     MatIconModule,
     MatListModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class LaunchesModule { }
